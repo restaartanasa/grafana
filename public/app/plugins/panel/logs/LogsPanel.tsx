@@ -4,6 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import * as React from 'react';
 import { isObservable, lastValueFrom } from 'rxjs';
 
+import { useGetLogsDrilldownDefaultColumnsQuery } from '@grafana/api-clients';
 import {
   AbsoluteTimeRange,
   CoreApp,
@@ -198,6 +199,22 @@ export const LogsPanel = ({
   const keepScrollPositionRef = useRef<null | 'infinite-scroll' | 'user'>(null);
   let closeCallback = useRef<() => void>();
   const { app, eventBus, onAddAdHocFilter } = usePanelContext();
+
+  const { currentData: logsDrilldownData, error: logsDrilldownError } = useGetLogsDrilldownDefaultColumnsQuery({
+    name: 'gdev-loki',
+  });
+
+  console.log('currentData', logsDrilldownData);
+  console.log('logsDrilldownError', logsDrilldownError);
+
+  useEffect(() => {
+    if (logsDrilldownData) {
+      console.log('LogsDrilldown API Response:', logsDrilldownData);
+    }
+    if (logsDrilldownError) {
+      console.error('LogsDrilldown API Error:', logsDrilldownError);
+    }
+  }, [logsDrilldownData, logsDrilldownError]);
 
   useEffect(() => {
     getAppEvents().publish(
