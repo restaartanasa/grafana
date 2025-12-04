@@ -146,13 +146,15 @@ func (c *PyroscopeClient) GetSeries(ctx context.Context, profileTypeID string, l
 				Value:       p.Value,
 				Timestamp:   p.Timestamp,
 				Annotations: p.Annotations,
-				Exemplars:   make([]*Exemplar, len(p.Exemplars)),
 			}
-			for j, e := range p.Exemplars {
-				points[i].Exemplars[j] = &Exemplar{
-					Id:        e.ProfileId,
-					Value:     e.Value,
-					Timestamp: e.Timestamp,
+			if len(p.Exemplars) > 0 {
+				points[i].Exemplars = make([]*Exemplar, len(p.Exemplars))
+				for j, e := range p.Exemplars {
+					points[i].Exemplars[j] = &Exemplar{
+						Id:        e.ProfileId,
+						Value:     e.Value,
+						Timestamp: e.Timestamp,
+					}
 				}
 			}
 		}

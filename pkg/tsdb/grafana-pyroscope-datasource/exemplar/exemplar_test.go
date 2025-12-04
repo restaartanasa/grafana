@@ -28,7 +28,7 @@ func TestCreateExemplarFrame(t *testing.T) {
 	require.Equal(t, 2, rows)
 	row := frame.RowCopy(0)
 	require.Equal(t, 4, len(row))
+	require.Equal(t, 1.0, row[1])
 	require.Equal(t, "1", row[2])
-	require.Equal(t, 1.0, row[3])
-	require.Equal(t, "bar", row[4])
+	require.Equal(t, "bar", row[3])
 }
