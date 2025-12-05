@@ -100,6 +100,7 @@ export default function transformTraceData(data: TraceResponse | undefined): Tra
 
   const max = data.spans.length;
   for (let i = 0; i < max; i++) {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     const span: TraceSpan = data.spans[i] as TraceSpan;
     const { startTime, duration, processID } = span;
 

@@ -14,7 +14,7 @@
 
 import { css, cx } from '@emotion/css';
 import { SpanStatusCode } from '@opentelemetry/api';
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
   CoreApp,
@@ -31,9 +31,9 @@ import {
 } from '@grafana/data';
 import { t } from '@grafana/i18n';
 import { TraceToProfilesOptions } from '@grafana/o11y-ds-frontend';
-import { usePluginLinks } from '@grafana/runtime';
+import { getBackendSrv, usePluginLinks } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
-import { Icon, useStyles2 } from '@grafana/ui';
+import { Icon, LinkButton, Spinner, useStyles2 } from '@grafana/ui';
 
 import { pyroscopeProfileIdTagKey } from '../../../createSpanLink';
 import { autoColor } from '../../Theme';
@@ -110,6 +110,158 @@ const useResourceAttributesExtensionLinks = ({
   );
 
   return resourceLinksGetter;
+};
+
+// Response type from the alert-inspection API
+interface AlertInspectionEntity {
+  id: number;
+  type: string;
+  name: string;
+  scope?: {
+    namespace?: string;
+    env?: string;
+  };
+}
+
+interface AlertInspectionResponse {
+  type: string;
+  timeCriteria: {
+    start: number;
+    end: number;
+  };
+  data: {
+    entities: AlertInspectionEntity[];
+  };
+}
+
+// Build the KG entity URL from the entity data
+const buildEntityUrl = (entity: AlertInspectionEntity, timeRange: TimeRange): string => {
+  const baseUrl = '/a/grafana-asserts-app/entities';
+  const params = new URLSearchParams();
+
+  // Add entity details as nested params (ed[type], ed[name], etc.)
+  params.set('ed[type]', entity.type);
+  params.set('ed[name]', entity.name);
+
+  if (entity.scope?.namespace) {
+    params.set('ed[scope][namespace]', entity.scope.namespace);
+  }
+  if (entity.scope?.env) {
+    params.set('ed[scope][env]', entity.scope.env);
+  }
+
+  // Add time range
+  params.set('start', timeRange.from.valueOf().toString());
+  params.set('end', timeRange.to.valueOf().toString());
+
+  return `${baseUrl}?${params.toString()}`;
+};
+
+// Hook to fetch entity URL from the asserts plugin API
+const useEntityUrl = ({
+  spanTags,
+  processTags,
+  timeRange,
+}: {
+  spanTags: TraceKeyValuePair[];
+  processTags: TraceKeyValuePair[];
+  timeRange: TimeRange;
+}) => {
+  const [entityUrl, setEntityUrl] = useState<string | null>(null);
+  const [entityName, setEntityName] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Only include these specific attributes for the alert-inspection API
+    // Map from trace attribute names to the names expected by the API
+    const ATTRIBUTE_MAPPING: Record<string, string> = {
+      'k8s.cluster.name': 'cluster',
+      'k8s.namespace.name': 'namespace',
+      'service.name': 'service',
+      'service.namespace': 'namespace',
+      // Also check for service_name format (used in some traces)
+      'service_name': 'service',
+      'cluster': 'cluster',
+      'namespace': 'namespace',
+    };
+
+    const fetchEntityUrl = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        // Build labels from span tags and process tags, mapping to expected API names
+        const labels: Record<string, string> = {};
+        const allTags = [...(processTags ?? []), ...(spanTags ?? [])];
+
+        // Debug: log all available tags
+        console.log(
+          'Available tags:',
+          allTags.map((t) => `${t.key}=${t.value}`)
+        );
+
+        allTags.forEach((tag) => {
+          const mappedKey = ATTRIBUTE_MAPPING[tag.key];
+          if (mappedKey && !labels[mappedKey]) {
+            labels[mappedKey] = String(tag.value);
+          }
+        });
+
+        console.log('Labels being sent to API:', labels);
+
+        // Skip API call if no allowed attributes found
+        if (Object.keys(labels).length === 0) {
+          console.log('No matching attributes found, skipping API call');
+          setLoading(false);
+          return;
+        }
+
+        const requestBody = {
+          alertLabels: [labels],
+          timeCriteria: {
+            start: timeRange.from.valueOf(),
+            end: timeRange.to.valueOf(),
+          },
+        };
+
+        console.log('Request body:', JSON.stringify(requestBody, null, 2));
+
+        const response: AlertInspectionResponse = await getBackendSrv().post(
+          '/api/plugins/grafana-asserts-app/resources/asserts/api-server/v1/alert-inspection',
+          requestBody
+        );
+
+        console.log('API Response:', response);
+
+        // Extract the first entity from the response
+        const entity = response?.data?.entities?.[0];
+        if (entity) {
+          const url = buildEntityUrl(entity, timeRange);
+          setEntityUrl(url);
+          setEntityName(`${entity.type}: ${entity.name}`);
+          console.log('Entity found:', entity.type, entity.name, 'URL:', url);
+        } else {
+          console.log('No entities found in response');
+        }
+      } catch (err) {
+        console.error('Failed to fetch entity URL:', err);
+        setError(err instanceof Error ? err.message : 'Failed to fetch entity URL');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Only fetch if at least one of the mapped attributes is present
+    const allTags = [...(processTags ?? []), ...(spanTags ?? [])];
+    const hasAllowedAttributes = allTags.some((tag) => tag.key in ATTRIBUTE_MAPPING);
+
+    if (hasAllowedAttributes) {
+      fetchEntityUrl();
+    }
+  }, [spanTags, processTags, timeRange]);
+
+  return { entityUrl, entityName, loading, error };
 };
 
 const getStyles = (theme: GrafanaTheme2) => {
@@ -307,6 +459,14 @@ export default function SpanDetail(props: SpanDetailProps) {
   } = span;
 
   const { timeZone } = props;
+
+  // Fetch entity URL from the asserts plugin API
+  const { entityUrl, entityName, loading: entityUrlLoading } = useEntityUrl({
+    spanTags: tags,
+    processTags: process.tags,
+    timeRange,
+  });
+
   const durationIcon: IconName = 'hourglass';
   const startIcon: IconName = 'clock-nine';
 
@@ -384,6 +544,8 @@ export default function SpanDetail(props: SpanDetailProps) {
       value: span.traceState,
     });
   }
+
+  // Entity link will be rendered separately as a clickable link
 
   const { interpolatedParams, ...focusSpanLink } = createFocusSpanLink(traceID, spanID);
   const resourceLinksGetter = useResourceAttributesExtensionLinks({
@@ -513,6 +675,19 @@ export default function SpanDetail(props: SpanDetailProps) {
             {operationName}
           </h6>
           {linksComponent}
+          {entityUrlLoading && <Spinner size="sm" />}
+          {entityUrl && entityName && (
+            <LinkButton
+              href={entityUrl}
+              target="_blank"
+              size="sm"
+              icon="external-link-alt"
+              variant="secondary"
+              title={t('explore.span-detail.view-kg-entity', 'View in Knowledge Graph')}
+            >
+              {entityName}
+            </LinkButton>
+          )}
         </div>
         <div className={styles.listWrapper}>
           <LabeledList className={styles.list} divider={false} items={overviewItems} color={color} />
