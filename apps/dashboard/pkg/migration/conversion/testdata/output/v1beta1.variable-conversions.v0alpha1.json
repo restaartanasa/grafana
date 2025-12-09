@@ -279,6 +279,23 @@
         },
         {
           "current": {
+            "text": [],
+            "value": []
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "existing-ref-uid"
+          },
+          "description": "GroupBy variable without explicit multi - should default to true",
+          "hide": 0,
+          "label": "Group By Without Multi",
+          "name": "groupby_var_no_multi",
+          "options": [],
+          "skipUrlSync": false,
+          "type": "groupby"
+        },
+        {
+          "current": {
             "selected": false,
             "text": "false",
             "value": "false"

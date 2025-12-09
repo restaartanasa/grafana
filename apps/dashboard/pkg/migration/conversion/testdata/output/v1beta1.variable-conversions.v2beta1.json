@@ -319,6 +319,26 @@
         }
       },
       {
+        "kind": "GroupByVariable",
+        "group": "prometheus",
+        "datasource": {
+          "name": "existing-ref-uid"
+        },
+        "spec": {
+          "name": "groupby_var_no_multi",
+          "current": {
+            "text": [],
+            "value": []
+          },
+          "options": [],
+          "multi": true,
+          "label": "Group By Without Multi",
+          "hide": "dontHide",
+          "skipUrlSync": false,
+          "description": "GroupBy variable without explicit multi - should default to true"
+        }
+      },
+      {
         "kind": "SwitchVariable",
         "spec": {
           "name": "switch_var",

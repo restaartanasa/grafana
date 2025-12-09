@@ -419,7 +419,7 @@ export const handyTestingSchema: Spec = {
         description: 'A group by variable',
         hide: 'dontHide',
         label: 'Group By Variable',
-        multi: false,
+        multi: true,
         name: 'groupByVar',
         options: [
           {

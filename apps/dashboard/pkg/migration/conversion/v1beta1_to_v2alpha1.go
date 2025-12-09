@@ -1713,7 +1713,8 @@ func buildGroupByVariable(ctx context.Context, varMap map[string]interface{}, co
 			Hide:        commonProps.Hide,
 			SkipUrlSync: commonProps.SkipUrlSync,
 			Current:     buildVariableCurrent(varMap["current"]),
-			Multi:       getBoolField(varMap, "multi", false),
+			// GroupBy variables are multi-select by default in Grafana
+			Multi: getBoolField(varMap, "multi", true),
 		},
 	}
 

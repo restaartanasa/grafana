@@ -812,7 +812,8 @@ function getVariables(vars: TypedVariableModel[]): DashboardV2Spec['variables'] 
               value: v.current.value,
               text: v.current.text,
             },
-            multi: v.multi,
+            // GroupBy variables are multi-select by default in Grafana
+            multi: v.multi ?? true,
           },
         };
 
@@ -1013,6 +1014,7 @@ function getVariablesV1(vars: DashboardV2Spec['variables']): VariableModel[] {
           },
           current: v.spec.current,
           options: v.spec.options,
+          multi: v.spec.multi,
         };
         variables.push(gv);
         break;

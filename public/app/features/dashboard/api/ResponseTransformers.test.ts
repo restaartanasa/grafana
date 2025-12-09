@@ -305,6 +305,7 @@ describe('ResponseTransformers', () => {
               description: 'groupby var description',
               skipUrlSync: false,
               hide: 0,
+              multi: true,
               datasource: {
                 type: 'prometheus',
                 uid: 'abc',
@@ -314,6 +315,21 @@ describe('ResponseTransformers', () => {
                 { selected: false, text: '2', value: '2' },
               ],
               current: { value: ['1'], text: ['1'] },
+            },
+            // GroupBy variable without explicit multi - should default to true
+            {
+              type: 'groupby',
+              name: 'var8_no_multi',
+              label: 'groupby var without multi',
+              skipUrlSync: false,
+              hide: 0,
+              // Note: no multi property - GroupBy variables are multi by default
+              datasource: {
+                type: 'prometheus',
+                uid: 'abc',
+              },
+              options: [],
+              current: { value: [], text: [] },
             },
             // Query variable with minimal props and without current
             {
@@ -562,6 +578,17 @@ describe('ResponseTransformers', () => {
       validateVariablesV1ToV2(spec.variables[7], dashboardV1.templating?.list?.[7]);
       validateVariablesV1ToV2(spec.variables[8], dashboardV1.templating?.list?.[8]);
       validateVariablesV1ToV2(spec.variables[9], dashboardV1.templating?.list?.[9]);
+      validateVariablesV1ToV2(spec.variables[10], dashboardV1.templating?.list?.[10]);
+
+      // Verify GroupBy variable without explicit multi defaults to true
+      const groupByNoMulti = dashboardV1.templating?.list?.[8];
+      expect(groupByNoMulti?.type).toBe('groupby');
+      expect(groupByNoMulti?.multi).toBeUndefined();
+
+      const v2GroupByNoMulti = spec.variables[8];
+      expect(v2GroupByNoMulti.kind).toBe('GroupByVariable');
+      // @ts-expect-error
+      expect(v2GroupByNoMulti.spec.multi).toBe(true);
     });
   });
 
@@ -1224,6 +1251,8 @@ describe('ResponseTransformers', () => {
       expect(v2.datasource?.name).toEqual(v1.datasource?.uid);
       expect(v2.group).toEqual(v1.datasource?.type);
       expect(v2.spec.options).toEqual(v1.options);
+      // GroupBy variables default to multi: true when not specified
+      expect(v2.spec.multi).toEqual(v1.multi ?? true);
     }
 
     if (v2.kind === 'SwitchVariable') {

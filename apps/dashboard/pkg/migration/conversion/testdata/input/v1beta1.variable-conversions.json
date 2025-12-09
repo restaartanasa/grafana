@@ -259,6 +259,23 @@
           "skipUrlSync": false
         },
         {
+          "name": "groupby_var_no_multi",
+          "type": "groupby",
+          "label": "Group By Without Multi",
+          "description": "GroupBy variable without explicit multi - should default to true",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "existing-ref-uid"
+          },
+          "current": {
+            "text": [],
+            "value": []
+          },
+          "options": [],
+          "hide": 0,
+          "skipUrlSync": false
+        },
+        {
           "name": "switch_var",
           "type": "switch",
           "label": "Enable Feature",
