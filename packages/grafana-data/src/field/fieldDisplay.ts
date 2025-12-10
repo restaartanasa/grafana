@@ -43,6 +43,7 @@ export interface FieldSparkline {
   x?: Field; // if this does not exist, use the index
   timeRange?: TimeRange; // Optionally force an absolute time
   highlightIndex?: number;
+  highlightLine?: number;
 }
 
 export interface FieldDisplay {
@@ -71,6 +72,11 @@ export interface GetFieldDisplayValuesOptions {
 }
 
 export const DEFAULT_FIELD_DISPLAY_VALUES_LIMIT = 25;
+
+const getSparklineHighlight = (sparkline: FieldSparkline, calc: ): [number, 'point' | 'line'] => {
+  // TODO
+  return [0, 'point'];
+}
 
 export const getFieldDisplayValues = (options: GetFieldDisplayValuesOptions): FieldDisplay[] => {
   const { replaceVariables, reduceOptions, timeZone, theme } = options;
