@@ -2,6 +2,7 @@ import { Range } from 'uplot';
 
 import {
   applyNullInsertThreshold,
+  colorManipulator,
   DataFrame,
   FieldConfig,
   FieldSparkline,
@@ -114,7 +115,7 @@ export function getYRange(alignedFrame: DataFrame): Range.MinMax {
 }
 
 // TODO: #112977 enable highlight index
-// const HIGHLIGHT_IDX_POINT_SIZE = 6;
+const HIGHLIGHT_IDX_POINT_SIZE = 6;
 
 const defaultConfig: GraphFieldConfig = {
   drawStyle: GraphDrawStyle.Line,
@@ -125,6 +126,7 @@ const defaultConfig: GraphFieldConfig = {
 
 export const prepareSeries = (
   sparkline: FieldSparkline,
+  theme: GrafanaTheme2,
   fieldConfig?: FieldConfig<GraphFieldConfig>
 ): { frame: DataFrame; warning?: string } => {
   const frame = nullToValue(preparePlotFrame(sparkline, fieldConfig));
@@ -137,6 +139,26 @@ export const prepareSeries = (
       frame,
     };
   }
+  if (typeof sparkline.highlightLine === 'number') {
+    const highlightY = sparkline.highlightLine;
+    const colorMode = getFieldColorModeForField(sparkline.y);
+    const seriesColor = colorMode.getCalculator(sparkline.y, theme)(highlightY, 0);
+    frame.fields.push({
+      name: 'highlightLine',
+      type: FieldType.number,
+      values: new Array(frame.length).fill(highlightY),
+      config: {
+        custom: {
+          lineColor: colorManipulator.lighten(seriesColor, 0.5),
+          lineStyle: {
+            fill: 'dash',
+            dash: [5, 2],
+          },
+        },
+      },
+      state: {},
+    });
+  }
   return { frame };
 };
 
@@ -146,7 +168,7 @@ export const prepareConfig = (
   theme: GrafanaTheme2
 ): UPlotConfigBuilder => {
   const builder = new UPlotConfigBuilder();
-  // const rangePad = HIGHLIGHT_IDX_POINT_SIZE / 2;
+  const rangePad = HIGHLIGHT_IDX_POINT_SIZE / 2;
 
   builder.setCursor({
     show: false,
@@ -207,13 +229,14 @@ export const prepareConfig = (
 
     const colorMode = getFieldColorModeForField(field);
     const seriesColor = colorMode.getCalculator(field, theme)(0, 0);
-    // TODO: #112977 enable highlight index and adjust padding accordingly
-    // const hasHighlightIndex = typeof sparkline.highlightIndex === 'number';
-    // if (hasHighlightIndex) {
-    //   builder.setPadding([rangePad, rangePad, rangePad, rangePad]);
-    // }
+
+    const hasHighlightIndex = typeof sparkline.highlightIndex === 'number';
+    if (hasHighlightIndex) {
+      builder.setPadding([rangePad, rangePad, rangePad, rangePad]);
+    }
+
     const pointsMode =
-      customConfig.drawStyle === GraphDrawStyle.Points // || hasHighlightIndex
+      customConfig.drawStyle === GraphDrawStyle.Points || hasHighlightIndex
         ? VisibilityMode.Always
         : customConfig.showPoints;
 
@@ -228,9 +251,8 @@ export const prepareConfig = (
       lineWidth: customConfig.lineWidth,
       lineInterpolation: customConfig.lineInterpolation,
       showPoints: pointsMode,
-      // TODO: #112977 enable highlight index
-      pointSize: /* hasHighlightIndex ? HIGHLIGHT_IDX_POINT_SIZE : */ customConfig.pointSize,
-      // pointsFilter: hasHighlightIndex ? [sparkline.highlightIndex!] : undefined,
+      pointSize: hasHighlightIndex ? HIGHLIGHT_IDX_POINT_SIZE : customConfig.pointSize,
+      pointsFilter: hasHighlightIndex ? [sparkline.highlightIndex!] : undefined,
       fillOpacity: customConfig.fillOpacity,
       fillColor: customConfig.fillColor,
       lineStyle: customConfig.lineStyle,
