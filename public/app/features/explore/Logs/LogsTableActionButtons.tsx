@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import {
   AbsoluteTimeRange,
