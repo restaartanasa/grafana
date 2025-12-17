@@ -23,6 +23,7 @@ import {
   VisibilityMode,
   ScaleDirection,
   ScaleOrientation,
+  FieldColorModeId,
 } from '@grafana/schema';
 
 import { UPlotConfigBuilder } from '../uPlot/config/UPlotConfigBuilder';
@@ -147,8 +148,11 @@ export const prepareSeries = (
       type: FieldType.number,
       values: new Array(frame.length).fill(highlightY),
       config: {
+        color: {
+          mode: FieldColorModeId.Fixed,
+          fixedColor: colorManipulator.lighten(seriesColor, 0.5),
+        },
         custom: {
-          lineColor: colorManipulator.lighten(seriesColor, 0.5),
           lineStyle: {
             fill: 'dash',
             dash: [5, 2],

@@ -263,10 +263,13 @@ export const getFieldDisplayValues = (options: GetFieldDisplayValuesOptions): Fi
             };
             if (isReducerID(calc)) {
               const sparklineHighlight = getSparklineHighlight(sparkline, calc);
-              if (sparklineHighlight?.type === 'point') {
-                sparkline.highlightIndex = sparklineHighlight.xIdx;
-              } else if (sparklineHighlight?.type === 'line') {
-                sparkline.highlightLine = sparklineHighlight.y;
+              switch (sparklineHighlight?.type) {
+                case 'point':
+                  sparkline.highlightIndex = sparklineHighlight.xIdx;
+                  break;
+                case 'line':
+                  sparkline.highlightLine = sparklineHighlight.y;
+                  break;
               }
             }
           }
