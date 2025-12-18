@@ -78,6 +78,11 @@ func (ds *DataSource) newAWSConfig(ctx context.Context, region string) (aws.Conf
 		AccessKey:          ds.Settings.AccessKey,
 		SecretKey:          ds.Settings.SecretKey,
 		HTTPClient:         &http.Client{},
+
+		ProxyType:     awsauth.ProxyType(ds.Settings.ProxyType),
+		ProxyUrl:      ds.Settings.ProxyUrl,
+		ProxyUsername: ds.Settings.ProxyUsername,
+		ProxyPassword: ds.Settings.ProxyPassword,
 	}
 	if ds.Settings.GrafanaSettings.SecureSocksDSProxyEnabled && ds.Settings.SecureSocksProxyEnabled {
 		authSettings.ProxyOptions = ds.ProxyOpts

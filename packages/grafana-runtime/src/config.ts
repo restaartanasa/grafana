@@ -174,6 +174,7 @@ export class GrafanaBootConfig {
   expressionsEnabled = false;
   awsAllowedAuthProviders: string[] = [];
   awsAssumeRoleEnabled = false;
+  awsPerDatasourceHTTPProxyEnabled = false;
   azure: AzureSettingsGrafanaData = {
     managedIdentityEnabled: false,
     workloadIdentityEnabled: false,

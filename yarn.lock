@@ -3081,15 +3081,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@grafana/aws-sdk@npm:0.8.3":
-  version: 0.8.3
-  resolution: "@grafana/aws-sdk@npm:0.8.3"
+"@grafana/aws-sdk@portal:/Users/isabellasiu/code/grafana-aws-sdk-react::locator=grafana%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@grafana/aws-sdk@portal:/Users/isabellasiu/code/grafana-aws-sdk-react::locator=grafana%40workspace%3A."
   dependencies:
     "@grafana/async-query-data": "npm:0.4.2"
     "@grafana/plugin-ui": "npm:^0.11.0"
-  checksum: 10/e2b7ab725f1602831857ad63adb314ec62b9b4d08404f71ffa2ce278df0c364f5ad7a9a83f5e8d7e646922124f812cdc2a7035bff4a952a9f455eaf2c9a5992a
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@grafana/azure-sdk@npm:0.0.8":
   version: 0.0.8

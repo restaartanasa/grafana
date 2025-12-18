@@ -723,3 +723,5 @@ exclude github.com/RoaringBitmap/real-roaring-datasets v0.0.0-20190726190000-eb7
 
 // gomemcache 20250828162811 contains breaking changes, so it needs to be excluded unless loki package is updated
 exclude github.com/grafana/gomemcache v0.0.0-20250828162811-a96f6acee2fe
+
+replace github.com/grafana/grafana-aws-sdk => /Users/isabellasiu/code/grafana-aws-sdk
