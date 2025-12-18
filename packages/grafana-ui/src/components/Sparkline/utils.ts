@@ -126,8 +126,9 @@ const defaultConfig: GraphFieldConfig = {
 
 export const prepareSeries = (
   sparkline: FieldSparkline,
-  theme: GrafanaTheme2,
-  fieldConfig?: FieldConfig<GraphFieldConfig>
+  _theme: GrafanaTheme2,
+  fieldConfig?: FieldConfig<GraphFieldConfig>,
+  _showHighlights?: boolean
 ): { frame: DataFrame; warning?: string } => {
   const frame = nullToValue(preparePlotFrame(sparkline, fieldConfig));
   if (frame.fields.some((f) => f.values.length <= 1)) {
@@ -139,8 +140,8 @@ export const prepareSeries = (
       frame,
     };
   }
-  // TODO: #115592 will address this.
-  // if (typeof sparkline.highlightLine === 'number') {
+  // TODO:rgb(24, 24, 24) will address this.
+  // if (showHighlights && typeof sparkline.highlightLine === 'number') {
   //   const highlightY = sparkline.highlightLine;
   //   const colorMode = getFieldColorModeForField(sparkline.y);
   //   const seriesColor = colorMode.getCalculator(sparkline.y, theme)(highlightY, 0);
@@ -169,7 +170,8 @@ export const prepareSeries = (
 export const prepareConfig = (
   sparkline: FieldSparkline,
   dataFrame: DataFrame,
-  theme: GrafanaTheme2
+  theme: GrafanaTheme2,
+  showHighlights?: boolean
 ): UPlotConfigBuilder => {
   const builder = new UPlotConfigBuilder();
   const rangePad = HIGHLIGHT_IDX_POINT_SIZE / 2;
@@ -234,7 +236,7 @@ export const prepareConfig = (
     const colorMode = getFieldColorModeForField(field);
     const seriesColor = colorMode.getCalculator(field, theme)(0, 0);
 
-    const hasHighlightIndex = typeof sparkline.highlightIndex === 'number';
+    const hasHighlightIndex = showHighlights && typeof sparkline.highlightIndex === 'number';
     if (hasHighlightIndex) {
       builder.setPadding([rangePad, rangePad, rangePad, rangePad]);
     }
