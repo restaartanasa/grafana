@@ -139,29 +139,30 @@ export const prepareSeries = (
       frame,
     };
   }
-  if (typeof sparkline.highlightLine === 'number') {
-    const highlightY = sparkline.highlightLine;
-    const colorMode = getFieldColorModeForField(sparkline.y);
-    const seriesColor = colorMode.getCalculator(sparkline.y, theme)(highlightY, 0);
-    frame.fields.push({
-      name: 'highlightLine',
-      type: FieldType.number,
-      values: new Array(frame.length).fill(highlightY),
-      config: {
-        color: {
-          mode: FieldColorModeId.Fixed,
-          fixedColor: colorManipulator.lighten(seriesColor, 0.5),
-        },
-        custom: {
-          lineStyle: {
-            fill: 'dash',
-            dash: [5, 2],
-          },
-        },
-      },
-      state: {},
-    });
-  }
+  // TODO: #115592 will address this.
+  // if (typeof sparkline.highlightLine === 'number') {
+  //   const highlightY = sparkline.highlightLine;
+  //   const colorMode = getFieldColorModeForField(sparkline.y);
+  //   const seriesColor = colorMode.getCalculator(sparkline.y, theme)(highlightY, 0);
+  //   frame.fields.push({
+  //     name: 'highlightLine',
+  //     type: FieldType.number,
+  //     values: new Array(frame.length).fill(highlightY),
+  //     config: {
+  //       color: {
+  //         mode: FieldColorModeId.Fixed,
+  //         fixedColor: colorManipulator.lighten(seriesColor, 0.5),
+  //       },
+  //       custom: {
+  //         lineStyle: {
+  //           fill: 'dash',
+  //           dash: [5, 2],
+  //         },
+  //       },
+  //     },
+  //     state: {},
+  //   });
+  // }
   return { frame };
 };
 
