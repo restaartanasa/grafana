@@ -3717,6 +3717,7 @@
       "text": "Inga resultat hittades för din fråga"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7165,6 +7166,9 @@
       "time-range-label": "Lås tidsintervall"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "ProTip: {{proTip}}"
   },
@@ -7640,39 +7644,6 @@
         }
       },
       "share-span": "Dela"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Välj operator för maximalt intervall",
-      "aria-label-select-min-span-operator": "Välj operator för minsta intervall",
-      "aria-label-select-service-name": "Välj namn för tjänst",
-      "aria-label-select-service-name-operator": "Välj operator för tjänstnamn",
-      "aria-label-select-span-name": "Välj namn på intervall",
-      "aria-label-select-span-name-operator": "Välj operator för intervallnamn",
-      "ariaLabel-select-max-span-duration": "Välj maximal varaktighet för tidsspann",
-      "ariaLabel-select-min-span-duration": "Välj minimal varaktighet för tidsspann",
-      "label-collapse": "Intervallfilter",
-      "label-duration": "Varaktighet",
-      "label-service-name": "Namn på tjänst",
-      "label-span-name": "Intervallnamn",
-      "label-tags": "Taggar",
-      "placeholder-all-service-names": "Alla servicenamn",
-      "placeholder-all-span-names": "Alla namn på intervall",
-      "tooltip-collapse": "Filtrera dina spann nedan. Du kan fortsätta att tillämpa filter tills du har begränsat dina resulterande spann till det fåtal som du är mest intresserad av.",
-      "tooltip-duration": "Filtrera per varaktighet. Accepterade enheter är {{units}}",
-      "tooltip-tags": "Filtrera efter taggar, processtaggar eller loggfält i dina spår."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Lägg till etikett",
-      "aria-label-input-tag-value": "Ange taggvärde",
-      "aria-label-remove-tag": "Ta bort tagg",
-      "aria-label-select-tag-key": "Välj etikettnyckel",
-      "aria-label-select-tag-operator": "Välj etikettoperator",
-      "aria-label-select-tag-value": "Välj etikettvärde",
-      "placeholder-select-tag": "Välj etikett",
-      "placeholder-select-value": "Välj värde",
-      "placeholder-tag-value": "Etikettvärde",
-      "tooltip-add-tag": "Lägg till etikett",
-      "tooltip-remove-tag": "Ta bort tagg"
     },
     "span-flame-graph": {
       "flame-graph": "Flamgraf"
@@ -9393,6 +9364,7 @@
     "name-unit": "Enhet",
     "name-value-name": "Värdenamn",
     "name-y-axis-scale": "Y-axelns skala",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Auto",
     "placeholder-axis-width": "Auto",
     "placeholder-decimals": "Auto",
@@ -9422,6 +9394,18 @@
       "label-all": "Alla",
       "label-hidden": "Dolt",
       "label-single": "Singel"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11422,12 +11406,6 @@
         "latestReleaseDate": "Senaste utgivningsdatum:",
         "latestVersion": "Senaste versionen",
         "license": "Licens",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Ta upp ett problem",
         "reportAbuse": "",
         "reportAbuseTooltip": "Rapportera problem relaterade till skadliga eller farliga tilläggsprogram direkt till Grafana Labs.",
@@ -12182,6 +12160,9 @@
       "tooltip-unhealthy-repository": "Det gick inte att hämta en ohälsosam lagringsplats"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12201,10 +12182,15 @@
     },
     "warning-title-default": "Varning",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "Hur lång den här processen är beror på hur många resurser som är inblandade.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12223,6 +12209,7 @@
       "step-finish": "Välj ytterligare inställningar",
       "step-synchronize": "Synkronisera med extern lagring",
       "sync-description": "Synkronisera resurser med extern lagring. Efter det här engångssteget sparas alla framtida uppdateringar automatiskt på lagringsplatsen och provisioneras tillbaka till instansen.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Välj vad du vill synkronisera",
       "title-connect": "Anslut till extern lagring",
       "title-finish": "Välj ytterligare inställningar",

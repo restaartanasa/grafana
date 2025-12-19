@@ -3701,6 +3701,7 @@
       "text": "未找到与您的查询相关的结果"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7142,6 +7143,9 @@
       "time-range-label": "锁定时间范围"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "专业提示：{{proTip}}"
   },
@@ -7615,39 +7619,6 @@
         }
       },
       "share-span": "共享"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "选择最大跨度运算符",
-      "aria-label-select-min-span-operator": "选择最小跨度运算符",
-      "aria-label-select-service-name": "选择服务名称",
-      "aria-label-select-service-name-operator": "选择服务名称运算符",
-      "aria-label-select-span-name": "选择跨度名称",
-      "aria-label-select-span-name-operator": "选择跨度名称运算符",
-      "ariaLabel-select-max-span-duration": "选择最大跨度持续时间",
-      "ariaLabel-select-min-span-duration": "选择最小跨度持续时间",
-      "label-collapse": "跨度筛选器",
-      "label-duration": "持续时间",
-      "label-service-name": "服务名称",
-      "label-span-name": "跨度名称",
-      "label-tags": "标签",
-      "placeholder-all-service-names": "所有服务名称",
-      "placeholder-all-span-names": "所有跨度名称",
-      "tooltip-collapse": "在下方筛选您的跨度。您可以继续应用筛选条件，直到将结果跨度缩小到您最感兴趣的少数几个。",
-      "tooltip-duration": "按持续时间筛选。可接受的单位是 {{units}}",
-      "tooltip-tags": "根据跨度中的标记、流程标记或日志字段进行筛选。"
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "添加标记",
-      "aria-label-input-tag-value": "输入标记值",
-      "aria-label-remove-tag": "移除标记",
-      "aria-label-select-tag-key": "选择标记键",
-      "aria-label-select-tag-operator": "选择标记运算符",
-      "aria-label-select-tag-value": "选择标记值",
-      "placeholder-select-tag": "选择标记",
-      "placeholder-select-value": "选择值",
-      "placeholder-tag-value": "标记值",
-      "tooltip-add-tag": "添加标记",
-      "tooltip-remove-tag": "移除标记"
     },
     "span-flame-graph": {
       "flame-graph": "火焰图"
@@ -9358,6 +9329,7 @@
     "name-unit": "单位",
     "name-value-name": "值名称",
     "name-y-axis-scale": "Y 轴比例",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "自动",
     "placeholder-axis-width": "自动",
     "placeholder-decimals": "自动",
@@ -9387,6 +9359,18 @@
       "label-all": "全部",
       "label-hidden": "隐藏",
       "label-single": "单一"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11376,12 +11360,6 @@
         "latestReleaseDate": "最新发布日期：",
         "latestVersion": "最新版本",
         "license": "许可",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "报告问题",
         "reportAbuse": "",
         "reportAbuseTooltip": "直接向 Grafana Labs 报告与恶意或有害插件相关的问题。",
@@ -12131,6 +12109,9 @@
       "tooltip-unhealthy-repository": "无法拉取状态不良的存储库"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12150,10 +12131,15 @@
     },
     "warning-title-default": "警告",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "此过程的持续时间取决于所涉及资源的数量。",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12172,6 +12158,7 @@
       "step-finish": "选择附加设置",
       "step-synchronize": "与外部存储同步",
       "sync-description": "将资源与外部存储同步。完成此一次性步骤后，所有后续更新都将自动保存到存储库中，并预配回实例。",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "选择要同步的内容",
       "title-connect": "连接到外部存储",
       "title-finish": "选择附加设置",

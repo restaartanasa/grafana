@@ -3717,6 +3717,7 @@
       "text": "Nincs találat a lekérdezésre"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7165,6 +7166,9 @@
       "time-range-label": "Időtartomány zárolása"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "ProTip: {{proTip}}"
   },
@@ -7640,39 +7644,6 @@
         }
       },
       "share-span": "Megosztás"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Max. terjedelem operátor kijelölése",
-      "aria-label-select-min-span-operator": "Válasszon operátort a min. terjedelemhez",
-      "aria-label-select-service-name": "Válasszon szolgáltatásnevet",
-      "aria-label-select-service-name-operator": "Válasszon operátort a szolgáltatásnévhez",
-      "aria-label-select-span-name": "Válasszon terjedelemnevet",
-      "aria-label-select-span-name-operator": "Terjedelemnév operátor kijelölése",
-      "ariaLabel-select-max-span-duration": "Maximális időtartam kiválasztása",
-      "ariaLabel-select-min-span-duration": "Minimális időtartam kiválasztása",
-      "label-collapse": "Terjedelemszűrők",
-      "label-duration": "Időtartam",
-      "label-service-name": "Szolgáltatásnév",
-      "label-span-name": "Terjedelemnév",
-      "label-tags": "Címkék",
-      "placeholder-all-service-names": "Összes szolgáltatásnév",
-      "placeholder-all-span-names": "Összes terjedelemnév",
-      "tooltip-collapse": "Alább szűrheti a terjedelmeket. Folytathatja a szűrők alkalmazását, amíg a kapott terjedelmeket a leginkább keresett néhány terjedelemre nem szűkíti.",
-      "tooltip-duration": "Szűrés időtartam szerint. Elfogadott mértékegységek: {{units}}",
-      "tooltip-tags": "Szűrés címkék, folyamatcímkék vagy naplómezők alapján a terjedelmeiben."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Címke hozzáadása",
-      "aria-label-input-tag-value": "Bemeneti címke értéke",
-      "aria-label-remove-tag": "Címke eltávolítása",
-      "aria-label-select-tag-key": "Címkekulcs kijelölése",
-      "aria-label-select-tag-operator": "Címkeoperátor kijelölése",
-      "aria-label-select-tag-value": "Címkeérték kijelölése",
-      "placeholder-select-tag": "Címke kijelölése",
-      "placeholder-select-value": "Érték kijelölése",
-      "placeholder-tag-value": "Címke értéke",
-      "tooltip-add-tag": "Címke hozzáadása",
-      "tooltip-remove-tag": "Címke eltávolítása"
     },
     "span-flame-graph": {
       "flame-graph": "Lángdiagram"
@@ -9393,6 +9364,7 @@
     "name-unit": "Egység",
     "name-value-name": "Érték neve",
     "name-y-axis-scale": "Y tengely skálája",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Automatikus",
     "placeholder-axis-width": "Automatikus",
     "placeholder-decimals": "Automatikus",
@@ -9422,6 +9394,18 @@
       "label-all": "Összes",
       "label-hidden": "Rejtett",
       "label-single": "Különálló"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11422,12 +11406,6 @@
         "latestReleaseDate": "Legújabb kiadás dátuma:",
         "latestVersion": "Legújabb verzió",
         "license": "Licenc",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Probléma felvetése",
         "reportAbuse": "",
         "reportAbuseTooltip": "A rosszindulatú vagy kártékony bővítményekkel kapcsolatos problémák jelentése közvetlenül a Grafana Labs vállalatnak.",
@@ -12182,6 +12160,9 @@
       "tooltip-unhealthy-repository": "Nem lehet beolvasni egy nem megfelelő állapotú adattárat"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12201,10 +12182,15 @@
     },
     "warning-title-default": "Figyelmeztetés",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "A folyamat időtartama az érintett erőforrások számától függ.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12223,6 +12209,7 @@
       "step-finish": "Válassza ki a további beállításokat",
       "step-synchronize": "Szinkronizálás külső tárolóval",
       "sync-description": "Erőforrások szinkronizálása külső tárolóval. Ezután az egyszeri lépés után az összes jövőbeli frissítés automatikusan mentve lesz az adattárba, és vissza lesz építve a példányba.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Válassza ki, mit szeretne szinkronizálni",
       "title-connect": "Csatlakozás külső tárolóhoz",
       "title-finish": "Válassza ki a további beállításokat",

@@ -3749,6 +3749,7 @@
       "text": "По вашему запросу ничего не найдено"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7211,6 +7212,9 @@
       "time-range-label": "Заблокировать временной диапазон"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "Совет: {{proTip}}"
   },
@@ -7690,39 +7694,6 @@
         }
       },
       "share-span": "Поделиться"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Выбрать оператора макс. диапазона",
-      "aria-label-select-min-span-operator": "Выбрать оператор мин. диапазона",
-      "aria-label-select-service-name": "Выбрать название службы",
-      "aria-label-select-service-name-operator": "Выбрать оператор названия службы",
-      "aria-label-select-span-name": "Выбрать название диапазона",
-      "aria-label-select-span-name-operator": "Выбрать оператора названия диапазона",
-      "ariaLabel-select-max-span-duration": "Выбрать макс. продолжительность интервала",
-      "ariaLabel-select-min-span-duration": "Выбрать мин. продолжительность интервала",
-      "label-collapse": "Фильтры диапазонов",
-      "label-duration": "Длительность",
-      "label-service-name": "Название службы",
-      "label-span-name": "Название диапазона",
-      "label-tags": "Теги",
-      "placeholder-all-service-names": "Все названия служб",
-      "placeholder-all-span-names": "Все названия диапазонов",
-      "tooltip-collapse": "Выполните фильтрацию своих диапазонов ниже. Вы можете продолжать применять фильтры, пока не сузите полученные диапазоны до нескольких наиболее важных для вас вариантов.",
-      "tooltip-duration": "Фильтр по длительности. Допустимые единицы измерения: {{units}}",
-      "tooltip-tags": "Фильтр по тегам, тегам процессов или полям журнала в ваших диапазонах."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Добавить тег",
-      "aria-label-input-tag-value": "Ввести значение тега",
-      "aria-label-remove-tag": "Удалить тег",
-      "aria-label-select-tag-key": "Выбрать ключ тега",
-      "aria-label-select-tag-operator": "Выбрать оператор тега",
-      "aria-label-select-tag-value": "Выбрать значение тега",
-      "placeholder-select-tag": "Выбрать тег",
-      "placeholder-select-value": "Выбрать значение",
-      "placeholder-tag-value": "Значение тега",
-      "tooltip-add-tag": "Добавить тег",
-      "tooltip-remove-tag": "Удалить тег"
     },
     "span-flame-graph": {
       "flame-graph": "Flame-график"
@@ -9463,6 +9434,7 @@
     "name-unit": "Единица",
     "name-value-name": "Имя значения",
     "name-y-axis-scale": "Шкала оси Y",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Авто",
     "placeholder-axis-width": "Авто",
     "placeholder-decimals": "Авто",
@@ -9492,6 +9464,18 @@
       "label-all": "Все",
       "label-hidden": "Скрыты",
       "label-single": "Один"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11514,12 +11498,6 @@
         "latestReleaseDate": "Дата последнего выпуска:",
         "latestVersion": "Новейшая версия",
         "license": "Лицензия",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Сообщить о проблеме",
         "reportAbuse": "",
         "reportAbuseTooltip": "Сообщайте о проблемах, связанных с вредоносными или опасными плагинами, непосредственно в Grafana Labs.",
@@ -12284,6 +12262,9 @@
       "tooltip-unhealthy-repository": "Невозможно внести изменения в неисправный репозиторий"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12303,10 +12284,15 @@
     },
     "warning-title-default": "Предупреждение",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "Длительность процесса зависит от количества задействованных ресурсов.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12325,6 +12311,7 @@
       "step-finish": "Выберите дополнительные параметры",
       "step-synchronize": "Синхронизировать с внешним хранилищем",
       "sync-description": "Синхронизируйте ресурсы с внешним хранилищем. После этого разового шага все будущие обновления будут автоматически сохраняться в репозитории и загружаться обратно в экземпляр.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Выберите, что синхронизировать",
       "title-connect": "Подключение к внешнему хранилищу",
       "title-finish": "Выбор дополнительных параметров",

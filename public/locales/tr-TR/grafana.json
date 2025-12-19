@@ -3717,6 +3717,7 @@
       "text": "Sorgunuz için sonuç bulunamadı"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7165,6 +7166,9 @@
       "time-range-label": "Zaman aralığını kilitle"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "Uzman ipucu: {{proTip}}"
   },
@@ -7640,39 +7644,6 @@
         }
       },
       "share-span": "Paylaş"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Maksimum zaman aralığı işlecini seçin",
-      "aria-label-select-min-span-operator": "Minimum zaman aralığı işlecini seçin",
-      "aria-label-select-service-name": "Hizmet adını seç",
-      "aria-label-select-service-name-operator": "Hizmet adını işlecini seç",
-      "aria-label-select-span-name": "Zaman aralığı adı seç",
-      "aria-label-select-span-name-operator": "Zaman aralığı adı işleci seçin",
-      "ariaLabel-select-max-span-duration": "Maksimum zaman aralığı süresini seçin",
-      "ariaLabel-select-min-span-duration": "Minimum zaman aralığı süresini seçin",
-      "label-collapse": "Zaman aralığı filtreleri",
-      "label-duration": "Süre",
-      "label-service-name": "Hizmet adı",
-      "label-span-name": "Zaman aralığı adı",
-      "label-tags": "Etiketler",
-      "placeholder-all-service-names": "Tüm hizmet adları",
-      "placeholder-all-span-names": "Tüm zaman aralığı adları",
-      "tooltip-collapse": "Aşağıdaki zaman aralıklarınızı filtreleyin. İlginizi en çok çeken birkaç sonucu daraltana kadar filtre uygulamaya devam edebilirsiniz.",
-      "tooltip-duration": "Süreye göre filtreleyin. Kabul edilen birimler: {{units}}",
-      "tooltip-tags": "Zamanlardaki etiketlere, işlem etiketlerine veya günlük kaydı alanlarına göre filtreleyin."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Etiket ekle",
-      "aria-label-input-tag-value": "Etiket değeri girin",
-      "aria-label-remove-tag": "Etiketi kaldır",
-      "aria-label-select-tag-key": "Etiket anahtarını seçin",
-      "aria-label-select-tag-operator": "Etiket işlecini seçin",
-      "aria-label-select-tag-value": "Etiket değerini seçin",
-      "placeholder-select-tag": "Etiket seçin",
-      "placeholder-select-value": "Değer seçin",
-      "placeholder-tag-value": "Etiket değeri",
-      "tooltip-add-tag": "Etiket ekle",
-      "tooltip-remove-tag": "Etiketi kaldır"
     },
     "span-flame-graph": {
       "flame-graph": "Alev grafiği"
@@ -9393,6 +9364,7 @@
     "name-unit": "Birim",
     "name-value-name": "Değer adı",
     "name-y-axis-scale": "Y ekseni ölçeği",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Otomatik",
     "placeholder-axis-width": "Otomatik",
     "placeholder-decimals": "Otomatik",
@@ -9422,6 +9394,18 @@
       "label-all": "Tümü",
       "label-hidden": "Gizli",
       "label-single": "Tek"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11422,12 +11406,6 @@
         "latestReleaseDate": "Son yayın tarihi:",
         "latestVersion": "En Son Sürüm",
         "license": "Lisans",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Sorun bildir",
         "reportAbuse": "",
         "reportAbuseTooltip": "Zararlı veya kötü amaçlı eklentilere ilişkin sorunları doğrudan Grafana Labs'a bildirin.",
@@ -12182,6 +12160,9 @@
       "tooltip-unhealthy-repository": "İyi durumda olmayan bir depo çekilemedi"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12201,10 +12182,15 @@
     },
     "warning-title-default": "Uyarı",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "Bu işlemin süresi dâhil olan kaynakların sayısına bağlıdır.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12223,6 +12209,7 @@
       "step-finish": "Ek ayarlar seçin",
       "step-synchronize": "Harici depolama ile senkronize et",
       "sync-description": "Kaynakları harici depolama ile senkronize edin. Bu tek seferlik adımdan sonra tüm gelecekteki güncellemeler otomatik olarak depoya kaydedilecek ve örneğe geri sağlanacaktır.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Nelerin senkronize edileceğini seçin",
       "title-connect": "Harici depolamaya bağlan",
       "title-finish": "Ek ayarlar seçin",

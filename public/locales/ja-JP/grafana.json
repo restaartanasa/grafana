@@ -3701,6 +3701,7 @@
       "text": "クエリに一致する結果が見つかりませんでした。"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7142,6 +7143,9 @@
       "time-range-label": "時間範囲をロック"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "プロのヒント：{{proTip}} "
   },
@@ -7615,39 +7619,6 @@
         }
       },
       "share-span": "共有"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "最大スパン演算子を選択",
-      "aria-label-select-min-span-operator": "最小スパン演算子を選択",
-      "aria-label-select-service-name": "サービス名を選択",
-      "aria-label-select-service-name-operator": "サービス名演算子を選択",
-      "aria-label-select-span-name": "スパン名を選択",
-      "aria-label-select-span-name-operator": "スパン名演算子を選択",
-      "ariaLabel-select-max-span-duration": "最大スパン期間を選択",
-      "ariaLabel-select-min-span-duration": "最小スパン期間を選択",
-      "label-collapse": "スパンフィルター",
-      "label-duration": "継続時間",
-      "label-service-name": "サービス名",
-      "label-span-name": "スパン名",
-      "label-tags": "タグ",
-      "placeholder-all-service-names": "すべてのサービス名",
-      "placeholder-all-span-names": "すべてのスパン名",
-      "tooltip-collapse": "以下のスパンを絞り込みます。最も関心のある少数のスパンに絞り込むまで、フィルターを適用し続けることができます。",
-      "tooltip-duration": "期間で絞り込みます。使用可能な単位：{{units}}",
-      "tooltip-tags": "スパン内のタグ、プロセスタグ、またはログフィールドで絞り込みます。"
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "タグを追加",
-      "aria-label-input-tag-value": "タグ値を入力",
-      "aria-label-remove-tag": "タグを削除",
-      "aria-label-select-tag-key": "タグキーを選択",
-      "aria-label-select-tag-operator": "タグ演算子を選択",
-      "aria-label-select-tag-value": "タグ値を選択",
-      "placeholder-select-tag": "タグを選択",
-      "placeholder-select-value": "値を選択",
-      "placeholder-tag-value": "タグ値",
-      "tooltip-add-tag": "タグを追加",
-      "tooltip-remove-tag": "タグを削除"
     },
     "span-flame-graph": {
       "flame-graph": "フレームグラフ"
@@ -9358,6 +9329,7 @@
     "name-unit": "単位",
     "name-value-name": "値の名前",
     "name-y-axis-scale": "Y軸スケール",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "自動",
     "placeholder-axis-width": "自動",
     "placeholder-decimals": "自動",
@@ -9387,6 +9359,18 @@
       "label-all": "すべて",
       "label-hidden": "非表示",
       "label-single": "単体"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11376,12 +11360,6 @@
         "latestReleaseDate": "最新リリース日：",
         "latestVersion": "最新のバージョン",
         "license": "ライセンス",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "問題を提起する",
         "reportAbuse": "",
         "reportAbuseTooltip": "悪意のあるプラグインや有害なプラグインに関連する問題は、Grafana Labsに直接報告してください。",
@@ -12131,6 +12109,9 @@
       "tooltip-unhealthy-repository": "問題のあるリポジトリをプルできません"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12150,10 +12131,15 @@
     },
     "warning-title-default": "警告",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "このプロセスの所要時間は、関連するリソースの数によって異なります。",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12172,6 +12158,7 @@
       "step-finish": "追加設定を選択",
       "step-synchronize": "外部ストレージと同期",
       "sync-description": "リソースを外部ストレージと同期します。この一度限りの手順が完了すると、その後のすべての更新は自動的にリポジトリに保存され、インスタンスにプロビジョニングされます。",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "同期する内容を選択",
       "title-connect": "外部ストレージに接続",
       "title-finish": "追加設定を選択",

@@ -3701,6 +3701,7 @@
       "text": "Hasil untuk kueri Anda tidak ditemukan"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7142,6 +7143,9 @@
       "time-range-label": "Kunci rentang waktu"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "Kiat Pro: {{proTip}}"
   },
@@ -7615,39 +7619,6 @@
         }
       },
       "share-span": "Bagikan"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Pilih operator rentang maksimum",
-      "aria-label-select-min-span-operator": "Pilih operator rentang min",
-      "aria-label-select-service-name": "Pilih nama layanan",
-      "aria-label-select-service-name-operator": "Pilih operator nama layanan",
-      "aria-label-select-span-name": "Pilih nama rentang",
-      "aria-label-select-span-name-operator": "Pilih operator nama rentang",
-      "ariaLabel-select-max-span-duration": "Pilih durasi rentang maksimum",
-      "ariaLabel-select-min-span-duration": "Pilih durasi rentang minimum",
-      "label-collapse": "Filter Rentang",
-      "label-duration": "Durasi",
-      "label-service-name": "Nama layanan",
-      "label-span-name": "Nama rentang",
-      "label-tags": "Tag",
-      "placeholder-all-service-names": "Semua nama layanan",
-      "placeholder-all-span-names": "Semua nama rentang",
-      "tooltip-collapse": "Filter rentang Anda di bawah ini. Anda dapat terus menerapkan filter hingga Anda mempersempit rentang hasil Anda menjadi beberapa pilihan yang paling Anda minati.",
-      "tooltip-duration": "Filter menurut durasi. Unit yang diterima adalah {{units}}",
-      "tooltip-tags": "Filter berdasarkan tag, tag proses, atau bidang log di rentang Anda."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Tambah tag",
-      "aria-label-input-tag-value": "Masukkan nilai tag",
-      "aria-label-remove-tag": "Hapus tag",
-      "aria-label-select-tag-key": "Pilih kunci tag",
-      "aria-label-select-tag-operator": "Pilih operator tag",
-      "aria-label-select-tag-value": "Pilih nilai tag",
-      "placeholder-select-tag": "Pilih tag",
-      "placeholder-select-value": "Pilih nilai",
-      "placeholder-tag-value": "Nilai tag",
-      "tooltip-add-tag": "Tambah tag",
-      "tooltip-remove-tag": "Hapus tag"
     },
     "span-flame-graph": {
       "flame-graph": "Grafik api"
@@ -9358,6 +9329,7 @@
     "name-unit": "Unit",
     "name-value-name": "Nama nilai",
     "name-y-axis-scale": "Skala sumbu Y",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Otomatis",
     "placeholder-axis-width": "Otomatis",
     "placeholder-decimals": "Otomatis",
@@ -9387,6 +9359,18 @@
       "label-all": "Semua",
       "label-hidden": "Tersembunyi",
       "label-single": "Tunggal"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11376,12 +11360,6 @@
         "latestReleaseDate": "Tanggal rilis terbaru:",
         "latestVersion": "Versi Terbaru",
         "license": "Lisensi",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Kemukakan masalah",
         "reportAbuse": "",
         "reportAbuseTooltip": "Laporkan masalah yang terkait dengan plugin jahat atau berbahaya langsung ke Grafana Labs.",
@@ -12131,6 +12109,9 @@
       "tooltip-unhealthy-repository": "Tidak dapat menerapkan pull pada repositori yang tidak sehat"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12150,10 +12131,15 @@
     },
     "warning-title-default": "Peringatan",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "Durasi proses ini bergantung pada jumlah sumber daya yang terlibat.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12172,6 +12158,7 @@
       "step-finish": "Pilih pengaturan tambahan",
       "step-synchronize": "Sinkronkan dengan penyimpanan eksternal",
       "sync-description": "Sinkronkan sumber daya dengan penyimpanan eksternal. Setelah langkah satu kali ini, semua pembaruan mendatang akan disimpan secara otomatis ke repositori dan disediakan kembali ke instans.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Pilih item yang akan disinkronkan",
       "title-connect": "Hubungkan ke penyimpanan eksternal",
       "title-finish": "Pilih pengaturan tambahan",

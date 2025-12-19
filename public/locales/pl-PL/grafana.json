@@ -3749,6 +3749,7 @@
       "text": "Nie znaleziono wyników dla tego zapytania"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7211,6 +7212,9 @@
       "time-range-label": "Zablokuj zakres czasu"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "Wskazówka: {{proTip}}"
   },
@@ -7690,39 +7694,6 @@
         }
       },
       "share-span": "Udostępnij"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Wybierz operator maksymalnego zakresu",
-      "aria-label-select-min-span-operator": "Wybierz operator minimalnego zakresu",
-      "aria-label-select-service-name": "Wybierz nazwę usługi",
-      "aria-label-select-service-name-operator": "Wybierz operator nazwy usługi",
-      "aria-label-select-span-name": "Wybierz nazwę zakresu",
-      "aria-label-select-span-name-operator": "Wybierz operator nazwy zakresu",
-      "ariaLabel-select-max-span-duration": "Wybierz maksymalny czas trwania zakresu",
-      "ariaLabel-select-min-span-duration": "Wybierz minimalny czas trwania zakresu",
-      "label-collapse": "Filtry zakresu",
-      "label-duration": "Czas trwania",
-      "label-service-name": "Nazwa usługi",
-      "label-span-name": "Nazwa zakresu",
-      "label-tags": "Znaczniki",
-      "placeholder-all-service-names": "Wszystkie nazwy usług",
-      "placeholder-all-span-names": "Wszystkie nazwy zakresów",
-      "tooltip-collapse": "Odfiltruj zakresy poniżej. Możesz dodawać filtry, aż zawęzisz zakres wyników do kilku najbardziej interesujących.",
-      "tooltip-duration": "Filtrowanie według czasu trwania. Akceptowane jednostki: {{units}}",
-      "tooltip-tags": "Filtruj według tagów, tagów procesu lub pól logów w swoich zakresach."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Dodaj tag",
-      "aria-label-input-tag-value": "Wpisz wartość tagu",
-      "aria-label-remove-tag": "Usuń tag",
-      "aria-label-select-tag-key": "Wybierz klucz tagu",
-      "aria-label-select-tag-operator": "Wybierz operator tagu",
-      "aria-label-select-tag-value": "Wybierz wartość tagu",
-      "placeholder-select-tag": "Wybierz tag",
-      "placeholder-select-value": "Wybierz wartość",
-      "placeholder-tag-value": "Wartość tagu",
-      "tooltip-add-tag": "Dodaj tag",
-      "tooltip-remove-tag": "Usuń tag"
     },
     "span-flame-graph": {
       "flame-graph": "Wykres płomienia"
@@ -9463,6 +9434,7 @@
     "name-unit": "Jednostka",
     "name-value-name": "Nazwa wartości",
     "name-y-axis-scale": "Skala osi Y",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Automatycznie",
     "placeholder-axis-width": "Automatycznie",
     "placeholder-decimals": "Automatycznie",
@@ -9492,6 +9464,18 @@
       "label-all": "Wszystkie",
       "label-hidden": "Ukryte",
       "label-single": "Pojedyncza"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11514,12 +11498,6 @@
         "latestReleaseDate": "Data wydania najnowszej wersji:",
         "latestVersion": "Najnowsza wersja",
         "license": "Licencja",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Zgłoś sprawę",
         "reportAbuse": "",
         "reportAbuseTooltip": "Zgłaszaj sprawy związane ze złośliwymi lub szkodliwymi wtyczkami bezpośrednio do Grafana Labs.",
@@ -12284,6 +12262,9 @@
       "tooltip-unhealthy-repository": "Nie można pobrać danych z niesprawnego repozytorium"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12303,10 +12284,15 @@
     },
     "warning-title-default": "Ostrzeżenie",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "Czas trwania tego procesu zależy od liczby zasobów.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12325,6 +12311,7 @@
       "step-finish": "Wybierz dodatkowe ustawienia",
       "step-synchronize": "Synchronizuj z zewnętrzną pamięcią masową",
       "sync-description": "Zsynchronizuj zasoby z zewnętrzną pamięcią masową. Po tym jednorazowym kroku wszystkie przyszłe aktualizacje zostaną automatycznie zapisane w repozytorium i ponownie aprowizowane w instancji.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Wybierz, co chcesz zsynchronizować",
       "title-connect": "Połączenie z zewnętrzną pamięcią masową",
       "title-finish": "Wybierz dodatkowe ustawienia",

@@ -3701,6 +3701,7 @@
       "text": "未找到您的查詢結果"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7142,6 +7143,9 @@
       "time-range-label": "鎖定時間範圍"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "專業提示：{{proTip}}"
   },
@@ -7615,39 +7619,6 @@
         }
       },
       "share-span": "分享"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "選擇最大範圍的運算子",
-      "aria-label-select-min-span-operator": "選取最小範圍的運算子",
-      "aria-label-select-service-name": "選取服務名稱",
-      "aria-label-select-service-name-operator": "選取服務名稱運算子",
-      "aria-label-select-span-name": "選取範圍名稱",
-      "aria-label-select-span-name-operator": "選擇範圍名稱運算子",
-      "ariaLabel-select-max-span-duration": "選擇最大跨度持續時間",
-      "ariaLabel-select-min-span-duration": "選取最小跨度持續時間",
-      "label-collapse": "範圍篩選器",
-      "label-duration": "持續時間",
-      "label-service-name": "服務名稱",
-      "label-span-name": "範圍名稱",
-      "label-tags": "標籤",
-      "placeholder-all-service-names": "所有服務名稱",
-      "placeholder-all-span-names": "所有範圍名稱",
-      "tooltip-collapse": "篩選下方的範圍。您可以繼續套用篩選條件，直到將結果範圍縮小到您最感興趣的幾個範圍。",
-      "tooltip-duration": "依持續時間篩選。可接受的單元為 {{units}}",
-      "tooltip-tags": "按範圍中的標記、流程標記或紀錄欄位篩選。"
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "新增標記",
-      "aria-label-input-tag-value": "輸入標記值",
-      "aria-label-remove-tag": "移除標記",
-      "aria-label-select-tag-key": "選擇標記鍵",
-      "aria-label-select-tag-operator": "選擇標記運算子",
-      "aria-label-select-tag-value": "選擇標記值",
-      "placeholder-select-tag": "選擇標記",
-      "placeholder-select-value": "選擇值",
-      "placeholder-tag-value": "標記值",
-      "tooltip-add-tag": "新增標記",
-      "tooltip-remove-tag": "移除標記"
     },
     "span-flame-graph": {
       "flame-graph": "火焰圖"
@@ -9358,6 +9329,7 @@
     "name-unit": "單位",
     "name-value-name": "值名稱",
     "name-y-axis-scale": "Y 軸刻度",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "自動",
     "placeholder-axis-width": "自動",
     "placeholder-decimals": "自動",
@@ -9387,6 +9359,18 @@
       "label-all": "全部",
       "label-hidden": "隱藏",
       "label-single": "單一"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11376,12 +11360,6 @@
         "latestReleaseDate": "最新發佈日期：",
         "latestVersion": "最新版本",
         "license": "授權",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "提出問題",
         "reportAbuse": "",
         "reportAbuseTooltip": "將與惡意或有害外掛程式相關的問題直接報告給 Grafana Labs。",
@@ -12131,6 +12109,9 @@
       "tooltip-unhealthy-repository": "無法拉取狀態不佳的儲存庫"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12150,10 +12131,15 @@
     },
     "warning-title-default": "警告",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "此流程的持續時間取決於所涉及的資源數量。",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12172,6 +12158,7 @@
       "step-finish": "選擇附加設定",
       "step-synchronize": "與外部儲存空間同步",
       "sync-description": "將資源與外部儲存空間同步。在此一次性步驟之後，未來的所有更新都將自動儲存到儲存庫中，並佈建回執行個體。",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "選擇要同步的內容",
       "title-connect": "連接到外部儲存空間",
       "title-finish": "選擇附加設定",

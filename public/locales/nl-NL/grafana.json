@@ -3717,6 +3717,7 @@
       "text": "Geen resultaten gevonden voor je zoekopdracht"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7165,6 +7166,9 @@
       "time-range-label": "Tijdsbereik vergrendelen"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "ProTip: {{proTip}} "
   },
@@ -7640,39 +7644,6 @@
         }
       },
       "share-span": "Delen"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Operator voor maximale span selecteren",
-      "aria-label-select-min-span-operator": "Selecteer een operator voor een minimumspan",
-      "aria-label-select-service-name": "Servicenaam selecteren",
-      "aria-label-select-service-name-operator": "Servicenaam operator selecteren",
-      "aria-label-select-span-name": "Selecteer een spannaam",
-      "aria-label-select-span-name-operator": " Operator voor een spannaam selecteren",
-      "ariaLabel-select-max-span-duration": "Selecteer een maximale spanduur",
-      "ariaLabel-select-min-span-duration": "Selecteer een minimale spanduur",
-      "label-collapse": "Spanfilters",
-      "label-duration": "Duur",
-      "label-service-name": "Servicenaam",
-      "label-span-name": "Spannaam",
-      "label-tags": "Labels",
-      "placeholder-all-service-names": "Alle servicenamen",
-      "placeholder-all-span-names": "Alle spannamen",
-      "tooltip-collapse": "Filter je bereik hieronder. Je kunt filters blijven toepassen totdat je het resulterende bereik hebt beperkt tot de resultaten die het meest interessant voor je zijn.",
-      "tooltip-duration": "Filteren op duur. Geaccepteerde eenheden zijn {{units}}",
-      "tooltip-tags": "Filteren op labels, labels verwerken of logvelden in je spans."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Label toevoegen",
-      "aria-label-input-tag-value": "Labelwaarde invoeren",
-      "aria-label-remove-tag": "Label verwijderen",
-      "aria-label-select-tag-key": "Labelsleutel selecteren",
-      "aria-label-select-tag-operator": "Labeloperator selecteren",
-      "aria-label-select-tag-value": "Labelwaarde selecteren",
-      "placeholder-select-tag": "Label selecteren",
-      "placeholder-select-value": "Waarde selecteren",
-      "placeholder-tag-value": "Labelwaarde",
-      "tooltip-add-tag": "Label toevoegen",
-      "tooltip-remove-tag": "Label verwijderen"
     },
     "span-flame-graph": {
       "flame-graph": "Vlamgrafiek"
@@ -9393,6 +9364,7 @@
     "name-unit": "Eenheid",
     "name-value-name": "Naam van waarde:",
     "name-y-axis-scale": "Y-as schaal",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Automatisch",
     "placeholder-axis-width": "Automatisch",
     "placeholder-decimals": "Automatisch",
@@ -9422,6 +9394,18 @@
       "label-all": "Alle",
       "label-hidden": "Verborgen",
       "label-single": "Enkel"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11422,12 +11406,6 @@
         "latestReleaseDate": "Uiterste releasedatum:",
         "latestVersion": "Nieuwste versie",
         "license": "Licentie",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Een probleem melden",
         "reportAbuse": "",
         "reportAbuseTooltip": "Meld problemen met kwaadaardige of schadelijke plug-ins rechtstreeks aan Grafana Labs.",
@@ -12182,6 +12160,9 @@
       "tooltip-unhealthy-repository": "Kan geen ongezonde repository ophalen"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12201,10 +12182,15 @@
     },
     "warning-title-default": "Waarschuwing",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "De duur van dit proces is afhankelijk van het aantal betrokken bronnen.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12223,6 +12209,7 @@
       "step-finish": "Kies aanvullende instellingen",
       "step-synchronize": "Synchroniseren met externe opslag",
       "sync-description": "Bronnen synchroniseren met externe opslag. Na deze eenmalige stap worden alle toekomstige updates automatisch opgeslagen in de repository en opnieuw ingericht in de instantie.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Kies wat je wilt synchroniseren",
       "title-connect": "Verbinden met externe opslag",
       "title-finish": "Kies aanvullende instellingen",

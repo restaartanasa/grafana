@@ -3717,6 +3717,7 @@
       "text": "Nessun risultato trovato per la ricerca"
     },
     "recently-viewed": {
+      "clear": "",
       "empty": "",
       "title": ""
     },
@@ -7165,6 +7166,9 @@
       "time-range-label": "Blocca intervallo di tempo"
     }
   },
+  "embedded-panel": {
+    "powered-by": ""
+  },
   "empty-list-cta": {
     "pro-tip": "Suggerimento pro: {{proTip}} "
   },
@@ -7640,39 +7644,6 @@
         }
       },
       "share-span": "Condividi"
-    },
-    "span-filters": {
-      "aria-label-select-max-span-operator": "Seleziona l'operatore di intervallo massimo",
-      "aria-label-select-min-span-operator": "Seleziona operatore di intervallo minimo",
-      "aria-label-select-service-name": "Seleziona nome servizio",
-      "aria-label-select-service-name-operator": "Seleziona operatore nome servizio",
-      "aria-label-select-span-name": "Seleziona nome intervallo",
-      "aria-label-select-span-name-operator": "Seleziona l'operatore del nome dell'intervallo",
-      "ariaLabel-select-max-span-duration": "Seleziona la durata dell'intervallo massimo",
-      "ariaLabel-select-min-span-duration": "Seleziona la durata dell'intervallo minimo",
-      "label-collapse": "Filtri intervallo",
-      "label-duration": "Durata",
-      "label-service-name": "Nome del servizio",
-      "label-span-name": "Nome intervallo",
-      "label-tags": "Tag",
-      "placeholder-all-service-names": "Tutti i nomi dei servizi",
-      "placeholder-all-span-names": "Tutti i nomi degli intervalli",
-      "tooltip-collapse": "Filtra i tuoi intervalli qui sotto. Puoi continuare ad applicare i filtri fino a quando non avrai ristretto gli intervalli risultanti ai pochi selezionati a cui sei più interessato.",
-      "tooltip-duration": "Filtra per durata. Le unità accettate sono {{units}}",
-      "tooltip-tags": "Filtra per tag, tag di processo o campi di registro nei tuoi intervalli."
-    },
-    "span-filters-tags": {
-      "aria-label-add-tag": "Aggiungi tag",
-      "aria-label-input-tag-value": "Valore del tag di inserimento",
-      "aria-label-remove-tag": "Rimuovi tag",
-      "aria-label-select-tag-key": "Seleziona chiave tag",
-      "aria-label-select-tag-operator": "Seleziona operatore tag",
-      "aria-label-select-tag-value": "Seleziona valore tag",
-      "placeholder-select-tag": "Seleziona tag",
-      "placeholder-select-value": "Seleziona valore",
-      "placeholder-tag-value": "Valore del tag",
-      "tooltip-add-tag": "Aggiungi tag",
-      "tooltip-remove-tag": "Rimuovi tag"
     },
     "span-flame-graph": {
       "flame-graph": "Grafico a fiamma"
@@ -9393,6 +9364,7 @@
     "name-unit": "Unità",
     "name-value-name": "Nome del valore",
     "name-y-axis-scale": "Scala asse Y",
+    "name-y-bucket-scale": "",
     "placeholder-axis-label": "Automatico",
     "placeholder-axis-width": "Automatico",
     "placeholder-decimals": "Automatico",
@@ -9422,6 +9394,18 @@
       "label-all": "Tutti",
       "label-hidden": "Nascosto",
       "label-single": "Singolo"
+    },
+    "y-bucket-scale-editor": {
+      "linear-threshold-description": "",
+      "linear-threshold-label": "",
+      "linear-threshold-placeholder": "",
+      "log-base-label": "",
+      "scale-options": {
+        "label-auto": "",
+        "label-linear": "",
+        "label-log": "",
+        "label-symlog": ""
+      }
     }
   },
   "help-modal": {
@@ -11422,12 +11406,6 @@
         "latestReleaseDate": "Data dell'ultima versione:",
         "latestVersion": "Versione più recente",
         "license": "Licenza",
-        "moreDetails": "",
-        "pluginInsights": {
-          "header": ""
-        },
-        "pluginInsightsSuccessTooltip": "",
-        "pluginInsightsWarningTooltip": "",
         "raiseAnIssue": "Segnala un problema",
         "reportAbuse": "",
         "reportAbuseTooltip": "Segnala i problemi relativi a plug-in dannosi o pericolosi direttamente a Grafana Labs.",
@@ -12182,6 +12160,9 @@
       "tooltip-unhealthy-repository": "Impossibile eseguire il pull di un repository non integro"
     },
     "synchronize-step": {
+      "instance-migrate-resources-description": "",
+      "migrate-resources-description": "",
+      "options": "",
       "repository-error": "",
       "repository-error-message": "",
       "repository-unhealthy": ""
@@ -12201,10 +12182,15 @@
     },
     "warning-title-default": "Attenzione",
     "wizard": {
+      "alert-intro": "",
       "alert-point-1": "",
-      "alert-point-2": "",
       "alert-point-3": "La durata di questo processo dipende dal numero di risorse coinvolte.",
       "alert-point-4": "",
+      "alert-point-folder-cleanup": "",
+      "alert-point-folder-structure": "",
+      "alert-point-instance-alerts": "",
+      "alert-point-permissions": "",
+      "alert-point-unsupported": "",
       "alert-title": "",
       "button-cancel": "",
       "button-cancelling": "",
@@ -12223,6 +12209,7 @@
       "step-finish": "Scegli impostazioni aggiuntive",
       "step-synchronize": "Sincronizza con la memoria esterna",
       "sync-description": "Sincronizza le risorse con la memoria esterna. Dopo questo passaggio una tantum, tutti gli aggiornamenti futuri verranno salvati automaticamente nel repository e ripristinati nell'istanza.",
+      "sync-option-migrate-resources": "",
       "title-bootstrap": "Scegli cosa sincronizzare",
       "title-connect": "Connetti a una memoria esterna",
       "title-finish": "Scegli impostazioni aggiuntive",
